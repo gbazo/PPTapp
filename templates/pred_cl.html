@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+        <style>
+            * {
+              box-sizing: border-box;
+            }
+
+            .text{
+                text-align: center;
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+            
+            .column {
+                float: left;
+                width: 25%;
+                padding-left: 5px;
+                align-self: center;
+                justify-content: space-between;
+                display: flex;
+            }
+
+            .row {
+                justify-content: space-between;
+                display: flex;
+            }
+            </style>
+
+        <title>Modelo de predição</title>
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div class="text">
+		
+                <h1>Resultado da Predição</h1>
+                <h5><i>Prediction Result:</i></h5>
+
+            </div>
+
+            <hr>
+
+            <div class="text">
+
+                <!-- <h2>Modelo Binário:</h2> --> 
+
+                <!-- {% if classe %} -->
+                {% if classe == "1" %}
+                    <h1>Pré-termo</h1>
+                {% else %}
+                    <h1>Termo</h1>
+                {% endif %}
+                <!-- {% endif %} -->
+
+                <br>
+                <!-- <h2>Modelo Categórico:</h2> -->
+
+                <!-- {% if classe2 %}
+                {% if classe == "0" %}
+                    <h1>acima de 37 semanas</h1>
+                {% elif classe2 == "1" %}
+                    <h1>34 a 36 semanas e 6 dias</h1>
+                {% elif classe2 == "2" %}
+                    <h1>31 a 33 semanas e 6 dias</h1>
+                {% else %}
+                    <h1>abaixo de 30 semanas</h1>
+                {% endif %}
+                 {% endif %} --> 
+            
+            </div>
+        
+            <hr>
+
+            <div class="d-flex justify-content-center">
+
+                <form action="/modelo" method="post">
+        
+                    <div class="col-sm-10">
+                        <button type="submit" class="btn btn-primary">Voltar</button>
+                    </div>
+
+                </form>
+
+                <form action="/home" method="post">
+        
+                    <div>
+                        <button type="submit" class="btn btn-primary">Pagina Inicial</button>
+                     </div>
+
+                </form>
+            
+            </div>
+
+        </div>
+
+    </body>
+
+</html>

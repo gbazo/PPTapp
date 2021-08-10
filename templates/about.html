@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+		<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+		<style>
+			* {
+			  box-sizing: border-box;
+			}
+
+			.text{
+				text-align: center;
+				padding-top: 20px;
+				padding-bottom: 5px;
+			}
+			
+			.column {
+				float: left;
+				width: 25%;
+				padding-left: 5px;
+				align-self: center;
+				justify-content: space-between;
+				display: flex;
+			}
+
+			.row {
+				justify-content: space-between;
+				display: flex;
+			}
+
+			p{
+				text-align: justify;
+			}
+
+			.container_c{
+				padding-left: 5%;
+			}
+
+			</style>
+		
+		
+		
+		
+		<title>Modelo de predição</title>
+		
+	</head>
+
+	<body>
+
+		<div class="container">
+
+			<div class="text">
+		
+				<h1>Sobre o projeto:</h1>
+				<h5><i>About this project:</i></h5>
+
+			</div>
+
+			<hr>
+
+			<p><b>Introdução:</b></p>
+			<p> O nascimento pré-termo (PT) é um dos principais fatores que
+				levam a morte e causa, em longo prazo, significativa perda de capacidade,
+				tanto física quanto psicológica entre os sobreviventes.</p> 
+			<p><b>Objetivos:</b></p> 
+			<p> Identificar fatores, desenvolver e validar um modelo de predição de partos pré-termos em uma coorte de nascimentos brasileira.</p> 
+			<p><b>Métodos:</b></p>
+			<p> Estudo transversal aninhado a coorte BRISA, que coletou informações sobre todos os nascimentos Ribeirão Preto-SP e um a cada três em São Luís-MA, Brasil, 2010. 
+				Foram aplicados questionários para a mãe. Nesta análise, apenas as informações maternas anteriores ao nascimento foram utilizadas. Usou-se características sociodemográficas, 
+				estilo de vida e acompanhamento pré-natal. Uma regressão foi utilizada para determinar as variáveis independentes e a variável dependente foi criada a partir da 
+				categorização da idade gestacional. Random Forest (RF) foi utilizado no desenvolvimento do modelo, análises ROC permitiram avaliar a 
+				performance do mesmo. </p>
+			<p><b>Resultados:</b></p>
+			<p> 7699 gestantes participaram e 7651 atenderam todos os critérios de inclusão. A idade média foi de 27 anos (±6,25). A taxa total de PT foi de 12,7% (RP) e 14,1% (SL). 
+				Destaca-se como principal preditor a ocorrência de um parto PT prévio. O modelo de predição baseado em RF atingiu uma acurácia de 91,3% e a validação 85,5%. 
+				Entre as características mais relevantes, nas mães com parto PT, 61% relataram um parto PT anterior, contra apenas 7,3% das mães de termo e 52% tiveram ameaça de parto PT 
+				durante a gestação atual, contra 8,7% das mães de termo. De acordo com a análise ROC o modelo pode ser aplicado a partir do terceiro mês e foi mais eficaz para 
+				identificar extremos e muito pré-termos (AUC=0,98). </p>
+			<p><b>Conclusão:</b></p>
+			<p> Fatores como parto PT prévio, sua ameaça e o acompanhamento do pré-natal foram determinantes para o parto PT neste estudo. Mesmo com o acompanhamento praticamente 
+				universal do PN, indicadores e local de realização do serviço parecem influenciar o parto PT. Uma aplicação computacional a partir do modelo de predição proposto para uso no 
+				acompanhamento das gestantes, por meio de políticas públicas de saúde pode impactar na qualidade de vida do binômio mãe-bebê, além de possíveis reduções de custo para o 
+				sistema de saúde. </p>
+
+			<hr>
+
+			<div class="d-flex justify-content-center">
+
+				<form action="/home" method="post">
+		
+					<div>
+						<button type="submit" class="btn btn-primary btn-lg">Voltar ao Inicio</button>
+					</div>
+
+				</form>
+			</div>
+
+			<hr>
+			<h5>Apoio:</h5>
+			<hr>
+
+			<div class="container_c">
+
+				<div class="column">
+					<img src="{{url_for('static', filename = 'capes.png')}}" style="width: 50%" />
+				</div>
+				<div class="column">
+					<img src="{{url_for('static', filename = 'usp.png')}}" style="width: 80%" />
+				</div>
+				<div class="column">
+					<img src="{{url_for('static', filename = 'hc.png')}}" style="width: 75%" />
+				</div>
+				<div class="column">                    
+					<img src="{{url_for('static', filename = 'fmrp.png')}}" style="width: 60%" />
+				</div>
+				
+
+			</div>
+
+		</div>
+
+	</body>
+
+
+</html>

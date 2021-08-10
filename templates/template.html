@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	
+	<style>
+		* {
+		  box-sizing: border-box;
+		}
+
+		.text{
+			text-align: center;
+			padding-top: 50px;
+		}
+		
+		.column {
+			float: left;
+			width: 25%;
+			padding-left: 5px;
+			align-self: center;
+			justify-content: space-between;
+			display: flex;
+		}
+
+		.container_c{
+			padding-left: 15%;
+		}
+
+		</style>
+
+	<title>Modelo de predição</title>
+
+  </head>
+  <body>
+
+	<div class="container"></div>
+
+		<div class="text">		
+			<h1>Insira os dados:</h1>
+		</div>
+
+		<hr>
+
+		<div class="container_c">
+
+			<form action="/verificar" method="post">
+
+				<div class="form-group row">
+					<label for="idademae" class="col-sm-2 col-form-label">Idade da Mãe:</label>
+					<div class="col-sm-3">
+					<input type="value" class="form-control" id="idademae" value="0" name="idademae">
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label for="nfilhos" class="col-sm-2 col-form-label">Número de Filhos:</label>
+					<div class="col-sm-3">
+					<input type="value" class="form-control" id="nfilhos" value="0" name="nfilhos">
+					</div>
+				</div>  
+
+				<fieldset class="form-group">
+					<div class="row">
+					<legend class="col-form-label col-sm-2 pt-0">Já teve parto anterior PT</legend>
+					<div class="col-sm-10">
+						<div class="form-check">
+						<input class="form-check-input" type="radio" name="partoantptcat" id="gridRadios1" value="1" checked>
+						<label class="form-check-label" for="gridRadios1">
+							Sim
+						</label>
+						</div>
+						<div class="form-check">
+						<input class="form-check-input" type="radio" name="partoantptcat" id="gridRadios2" value="0">
+						<label class="form-check-label" for="gridRadios2">
+							Não
+						</label>
+						</div>
+					</div>
+					</div>
+				</fieldset>
+
+				<fieldset class="form-group">
+					<div class="row">
+						<legend class="col-form-label col-sm-2 pt-0">Ameaça parto PT durante a gestação</legend>
+						<div class="col-sm-10">
+						<div class="form-check">
+							<input class="form-check-input" type="radio" name="ampt" id="gridRadios1" value="1" checked>
+							<label class="form-check-label" for="gridRadios1">
+							Sim
+							</label>
+						</div>
+						<div class="form-check">
+							<input class="form-check-input" type="radio" name="ampt" id="gridRadios2" value="2">
+							<label class="form-check-label" for="gridRadios2">
+							Não
+							</label>
+						</div>
+						</div>
+					</div>
+				</fieldset>
+			
+				<div class="form-group row">
+					<label for="qtcpn2t" class="col-sm-2 col-form-label">Quantidade de consultas no PN 2T:</label>
+					<div class="col-sm-3">
+					<input type="number" class="form-control" value="0" name="qtcpn2t" min="0" max="30">
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<label for="qtcpn3t" class="col-sm-2 col-form-label">Quantidade de consultas no PN 3T:</label>
+					<div class="col-sm-3">
+					<input type="number" class="form-control" value="0" name="qtcpn3t" min="0" max="30">
+					</div>
+				</div>
+				
+				<!--
+				<div class="form-group row">
+					<label for="malcoolg2t" class="col-sm-2 col-form-label">Média Alcool:</label>
+					<div class="col-sm-3">
+					<input type="number" class="form-control" value="0" name="malcoolg2t" min="0" max="20">
+					</div>
+				</div> -->
+
+				<div class="form-group row">
+					<label for="causahosp" class="col-sm-2 col-form-label">Necessitou de hospitalização (Sem hosp = 0):</label>
+					<div class="col-sm-3">
+					<input type="number" class="form-control" value="0" name="causahosp" min="0" max="30">
+					</div>
+				</div>
+
+				<div class="form-group row">
+					<div class="col-sm-2">Fez Pré-natal?</div>
+					<div class="col-sm-3">
+						<select name="pn" class="form-control">
+							<option value=1>Sim</option>
+							<option value=2>Não</option>
+						</select>
+					</div>
+				</div>
+
+				<fieldset class="form-group">
+					<div class="row">
+						<legend class="col-form-label col-sm-2 pt-0">Tipo serviço PN</legend>
+						<div class="col-sm-10">
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="localnp" id="gridRadios1" value="1" checked>
+								<label class="form-check-label" for="gridRadios1">
+									Público
+								</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="localnp" id="gridRadios2" value="3">
+									<label class="form-check-label" for="gridRadios2">
+										Privado
+									</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="localnp" id="gridRadios3" value="9">
+									<label class="form-check-label" for="gridRadios3">
+										Não fez PN
+									</label>
+								</div>
+							</div>
+						</div>
+				</fieldset>  
+
+				<fieldset class="form-group">
+				<div class="row">
+					<legend class="col-form-label col-sm-2 pt-0">Recebeu recomendação medicamentosa para anemia:</legend>
+					<div class="col-sm-10">
+						<div class="form-check">
+							<input class="form-check-input" type="radio" name="recanemia" id="gridRadios1" value="1">
+							<label class="form-check-label" for="gridRadios1">
+								Sim
+							</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="recanemia" id="gridRadios2" value="2" checked>
+								<label class="form-check-label" for="gridRadios2">
+									Não
+								</label>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+				
+				<fieldset class="form-group">
+					<div class="row">
+						<legend class="col-form-label col-sm-2 pt-0">Apresentou morbidades durante a gestação:</legend>
+						<div class="col-sm-10">
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="doencagest" id="gridRadios1" value="1">
+								<label class="form-check-label" for="gridRadios1">
+									Sim
+								</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="doencagest" id="gridRadios2" value="0" checked>
+									<label class="form-check-label" for="gridRadios2">
+										Não
+									</label>
+								</div>
+							</div>
+						</div>
+				</fieldset>
+
+				<fieldset class="form-group">
+					<div class="row">
+						<legend class="col-form-label col-sm-2 pt-0">Hipertenção durante a gestação:</legend>
+						<div class="col-sm-10">
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="hipertgest" id="gridRadios1" value="1">
+								<label class="form-check-label" for="gridRadios1">
+									Sim
+								</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="hipertgest" id="gridRadios2" value="2" checked>
+									<label class="form-check-label" for="gridRadios2">
+										Não
+									</label>
+								</div>
+							</div>
+						</div>
+				</fieldset>			
+
+				<fieldset class="form-group">
+					<div class="row">
+					<legend class="col-form-label col-sm-2 pt-0">Tabagismo antes da gestação:</legend>
+						<div class="col-sm-10">
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="habitofumo" id="gridRadios1" value="1">
+								<label class="form-check-label" for="gridRadios1">
+									Sim
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="habitofumo" id="gridRadios2" value="2" checked>
+								<label class="form-check-label" for="gridRadios2">
+									Não
+								</label>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+
+				<fieldset class="form-group">
+					<div class="row">
+						<legend class="col-form-label col-sm-2 pt-0">Tabagismo durante a gestação:</legend>
+						<div class="col-sm-10">
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="fumograv" id="gridRadios1" value="1">
+								<label class="form-check-label" for="gridRadios1">
+								Sim
+								</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="fumograv" id="gridRadios2" value="8" checked>
+								<label class="form-check-label" for="gridRadios2">
+								Não
+								</label>
+							</div>
+						</div>
+					</div>
+				</fieldset>
+
+				<div class="form-group row">
+					<label for="paroutrab" class="col-sm-2 col-form-label">Número de semanas sem trabalhar no final da gestação:</label>
+					<div class="col-sm-3">
+						<input type="value" class="form-control" id="paroutrab" value="0" name="paroutrab">
+					</div>
+				</div>
+			
+				<div class="form-group row">
+					<label for="mes1cpn" class="col-sm-2 col-form-label">Mês inicio PN</label>
+						<div class="col-sm-3">
+							<input type="value" class="form-control" id="mes1cpn" value="0" name="mes1cpn">
+						</div>
+				</div>
+			
+				<div class="form-group row">
+					<label for="nuspn" class="col-sm-2 col-form-label">Número de USG realizados</label>
+					<div class="col-sm-3">
+						<input type="value" class="form-control" name="nuspn" id="nuspn" value="0" required="True">
+					</div>
+				</div>
+<hr>
+				<div class="d-flex justify-content-center">
+					<div class="col-sm-10">
+						<button type="submit" class="btn btn-primary btn-lg">Verificar</button>
+					</div>
+				</div>
+			
+			</form>
+
+		</div>
+
+	</div>
+	  
+  </body>
+
+</html>

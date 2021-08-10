@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+        <style>
+            * {
+              box-sizing: border-box;
+            }
+
+            .text{
+                text-align: center;
+                padding-top: 50px;
+                padding-bottom: 50px;
+            }
+            
+            .column {
+                float: left;
+                width: 25%;
+                padding-left: 5px;
+                align-self: center;
+                justify-content: space-between;
+                display: flex;
+            }
+
+            .row {
+                justify-content: space-between;
+                display: flex;
+            }
+
+            .container_c{
+                padding-left: 5%;
+            }
+
+            </style>
+
+        <title>Modelo de predição</title>
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div class="text">
+		
+                <h1>Modelo de aplicação Web para</h1>
+                <h1>predição de Parto Pré-termo</h1>
+                <br>
+                <h5><i>Web application model for predicting preterm birth</i></h5>
+
+            </div>
+
+            <hr>
+            <br>
+
+            <div class="d-flex justify-content-center">
+
+                <form action="/modelo" method="post">
+        
+                    <div>
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary btn-lg">Iniciar</button>
+                        </div>
+                    </div>
+
+                </form>
+
+                <form action="/about" method="post">
+        
+                    <div>
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary btn-lg">Sobre</button>
+                        </div>
+                    </div>
+
+                </form>
+
+            </div>
+
+            <br>
+
+            <hr>
+            <h5>Apoio:</h5>
+            <hr>
+
+            <div class="container_c">
+
+                <div class="column">
+                    <img src="{{url_for('static', filename = 'capes.png')}}" style="width: 50%" />
+                </div>
+                <div class="column">
+                    <img src="{{url_for('static', filename = 'usp.png')}}" style="width: 80%" />
+                </div>
+                <div class="column">
+                    <img src="{{url_for('static', filename = 'hc.png')}}" style="width: 75%" />
+                </div>
+                <div class="column">                    
+                    <img src="{{url_for('static', filename = 'fmrp.png')}}" style="width: 60%" />
+                </div>
+                
+
+            </div>
+
+        </div>
+
+    </body>
+
+</html>
