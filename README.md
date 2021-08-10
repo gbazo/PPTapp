@@ -6,9 +6,11 @@ Aplicação para auxílio médico pela predição de partos pré-termo durante o
 
 Para utilização é necessário fazer o download do repositório (para isso clique em code > Download ZIP).
 
-Após isso instale as bibliotecas necessárias com o comando abaixo (recomenda-se a criação de um ambiente virtual Python com venv):
+Após descompactar os arquivos instale as bibliotecas necessárias com o comando abaixo (recomenda-se a criação de um ambiente virtual Python com venv):
 
 > pip install -r requirements.txt 
+
+O diretório onde o modelo (model.pkl) foi salvo deve ser ajustado no arquivo srv.py (linha 8).
 
 O aplicativo foi desenvolvido em Python 3.8, outras versões podem gerar erros de execução e não foram testadas.
 
